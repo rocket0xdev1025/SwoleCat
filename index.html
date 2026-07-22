@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWOLE CAT | $SWOLECAT</title>
+  <meta name="description" content="SWOLE CAT flexes unstoppable gains, shredded muscles, fearless vibes, and legendary meme power every day." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            swole: {
+              cream: '#FFF8E7',
+              sand: '#F5D59A',
+              gold: '#F5A623',
+              orange: '#E8913A',
+              ginger: '#D4782E',
+              ochre: '#B86B2A',
+              muscle: '#8B5A2B',
+              dark: '#2A1A0C',
+              ink: '#3D2914',
+              sky: '#4A6FA5',
+            }
+          },
+          fontFamily: {
+            display: ['"Bungee"', 'cursive'],
+            body: ['"Nunito"', 'sans-serif'],
+          },
+          animation: {
+            'flex': 'flexPulse 2.4s ease-in-out infinite',
+            'wiggle': 'wiggle 3s ease-in-out infinite',
+          },
+          keyframes: {
+            flexPulse: {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.04)' },
+            },
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-2deg)' },
+              '50%': { transform: 'rotate(2deg)' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, #F5A62355, transparent),
+        radial-gradient(ellipse 60% 40% at 100% 30%, #E8913A33, transparent),
+        radial-gradient(ellipse 50% 40% at 0% 70%, #F5D59A66, transparent),
+        linear-gradient(165deg, #FFF8E7 0%, #F8E4B8 35%, #F0C878 70%, #E8913A 140%);
+      min-height: 100vh;
+    }
+
+    .hero-banner {
+      background-image:
+        linear-gradient(180deg, rgba(42, 26, 12, 0.35) 0%, rgba(42, 26, 12, 0.15) 40%, rgba(42, 26, 12, 0.55) 100%),
+        url('banner.png');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+    }
+
+    .muscle-border {
+      border: 4px solid #D4782E;
+      box-shadow: 6px 6px 0 #8B5A2B;
+    }
+
+    .btn-swole {
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 4px 4px 0 #8B5A2B;
+    }
+    .btn-swole:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #8B5A2B;
+    }
+    .btn-swole:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 #8B5A2B;
+    }
+
+    .step-num {
+      background: linear-gradient(145deg, #F5A623, #D4782E);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-stroke: 1px #8B5A2B;
+    }
+
+    .ca-toast {
+      transform: translateY(120%);
+      opacity: 0;
+      transition: all 0.35s ease;
+    }
+    .ca-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .x-icon-wrap {
+      background: #0a0a0a;
+      border-radius: 50%;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dex-frame {
+      border: 4px solid #D4782E;
+      box-shadow: 8px 8px 0 #8B5A2B;
+      background: #1a1208;
+    }
+
+    .section-wave {
+      position: relative;
+    }
+    .section-wave::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0,20 Q150,0 300,20 T600,20 T900,20 T1200,20 L1200,0 L0,0 Z' fill='%23FFF8E7'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+    }
+  </style>
+</head>
+<body class="font-body text-swole-ink antialiased overflow-x-hidden">
+
+  <!-- Nav -->
+  <header class="relative z-20">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="SWOLE CAT logo" class="w-14 h-14 md:w-16 md:h-16 object-contain animate-wiggle drop-shadow-md" />
+        <div class="leading-none">
+          <span class="font-display text-xl md:text-2xl text-swole-dark tracking-wide block group-hover:text-swole-ginger transition-colors">SWOLE CAT</span>
+          <span class="text-xs md:text-sm font-extrabold text-swole-ochre tracking-widest">$SWOLECAT</span>
+        </div>
+      </a>
+      <div class="flex items-center gap-2 md:gap-3">
+        <a href="https://t.me/SWOLECAT_sol" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" title="Telegram">
+          <img src="tg.png" alt="Telegram" class="w-10 h-10 md:w-11 md:h-11 object-contain rounded-full" />
+        </a>
+        <a href="https://x.com/SWOLECAT_sol" target="_blank" rel="noopener noreferrer" class="x-icon-wrap w-10 h-10 md:w-11 md:h-11 hover:scale-110 transition-transform border-2 border-swole-dark" title="X / Twitter">
+          <img src="x.png" alt="X (Twitter)" class="w-full h-full object-cover" />
+        </a>
+        <a href="#how-to-buy" class="hidden sm:inline-block font-extrabold text-sm uppercase tracking-wide text-swole-dark hover:text-swole-ginger px-3 py-2">How to Buy</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10">
+    <!-- Hero: full-bleed banner -->
+    <section class="hero-banner relative min-h-[88vh] md:min-h-[92vh] flex flex-col justify-end">
+      <div class="absolute inset-0 bg-gradient-to-t from-swole-dark/80 via-transparent to-swole-dark/20"></div>
+      <div class="relative z-10 max-w-6xl mx-auto w-full px-4 pb-12 md:pb-16 pt-24">
+        <img src="logo.png" alt="" class="w-28 h-28 md:w-40 md:h-40 object-contain mb-4 animate-flex drop-shadow-2xl" />
+        <h1 class="font-display text-5xl sm:text-6xl md:text-8xl text-swole-cream drop-shadow-[4px_4px_0_#2A1A0C] leading-none mb-3">
+          SWOLE CAT
+        </h1>
+        <p class="font-display text-lg sm:text-xl md:text-2xl text-swole-gold mb-4 tracking-wide">
+          $SWOLECAT
+        </p>
+        <p class="max-w-xl text-base md:text-lg font-bold text-swole-cream/95 mb-8 leading-relaxed">
+          SWOLE CAT flexes unstoppable gains, shredded muscles, fearless vibes, and legendary meme power every day.
+        </p>
+        <div class="flex flex-wrap gap-3 md:gap-4">
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-swole inline-flex items-center justify-center px-7 py-3.5 md:px-9 md:py-4 bg-swole-gold hover:bg-swole-orange text-swole-dark font-display text-base md:text-lg rounded-xl border-2 border-swole-dark">
+            Buy Now
+          </a>
+          <a href="https://dexscreener.com/solana/TBA"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-swole inline-flex items-center justify-center px-7 py-3.5 md:px-9 md:py-4 bg-swole-cream hover:bg-white text-swole-dark font-display text-base md:text-lg rounded-xl border-2 border-swole-dark">
+            Chart
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contract Address -->
+    <section class="bg-swole-cream py-10 md:py-14 border-y-4 border-swole-ginger">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <p class="font-display text-sm md:text-base text-swole-ochre tracking-widest mb-3">CONTRACT ADDRESS</p>
+        <div class="muscle-border bg-white rounded-2xl p-3 md:p-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <code id="ca-address" class="flex-1 text-left text-xs sm:text-sm md:text-base font-extrabold text-swole-ink break-all px-2 py-2 select-all">
+            TBA
+          </code>
+          <button type="button" id="copy-ca"
+                  class="btn-swole shrink-0 px-6 py-3 bg-swole-ginger hover:bg-swole-ochre text-white font-display text-sm rounded-xl border-2 border-swole-dark">
+            Copy CA
+          </button>
+        </div>
+        <p class="mt-3 text-sm font-bold text-swole-muscle">Paste into Phantom / Solflare · Solana network</p>
+      </div>
+    </section>
+
+    <!-- How to Buy -->
+    <section id="how-to-buy" class="py-16 md:py-24 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="font-display text-4xl md:text-6xl text-swole-dark mb-3">How to Buy</h2>
+          <p class="text-lg md:text-xl font-bold text-swole-muscle max-w-lg mx-auto">
+            Four easy reps to stack $SWOLECAT on Solana. No spotter required.
+          </p>
+        </div>
+
+        <ol class="grid gap-8 md:gap-10">
+          <li class="flex flex-col md:flex-row gap-5 md:gap-8 items-start">
+            <span class="font-display text-6xl md:text-7xl step-num leading-none shrink-0 w-20 md:w-24">01</span>
+            <div class="flex-1 pt-1">
+              <h3 class="font-display text-2xl md:text-3xl text-swole-dark mb-2">Get a Solana Wallet</h3>
+              <p class="text-base md:text-lg font-bold text-swole-ink/80 leading-relaxed">
+                Download <a href="https://phantom.app" target="_blank" rel="noopener noreferrer" class="text-swole-ginger underline decoration-2 underline-offset-2 hover:text-swole-ochre">Phantom</a>
+                or <a href="https://solflare.com" target="_blank" rel="noopener noreferrer" class="text-swole-ginger underline decoration-2 underline-offset-2 hover:text-swole-ochre">Solflare</a>.
+                Create a wallet, save your seed phrase offline, and flex your new Solana setup.
+              </p>
+            </div>
+          </li>
+
+          <li class="flex flex-col md:flex-row gap-5 md:gap-8 items-start">
+            <span class="font-display text-6xl md:text-7xl step-num leading-none shrink-0 w-20 md:w-24">02</span>
+            <div class="flex-1 pt-1">
+              <h3 class="font-display text-2xl md:text-3xl text-swole-dark mb-2">Load Up SOL</h3>
+              <p class="text-base md:text-lg font-bold text-swole-ink/80 leading-relaxed">
+                Buy SOL on an exchange (Coinbase, Binance, Kraken, etc.), then withdraw it to your Solana wallet address.
+                Keep a little extra SOL for network fees — every rep needs gas.
+              </p>
+            </div>
+          </li>
+
+          <li class="flex flex-col md:flex-row gap-5 md:gap-8 items-start">
+            <span class="font-display text-6xl md:text-7xl step-num leading-none shrink-0 w-20 md:w-24">03</span>
+            <div class="flex-1 pt-1">
+              <h3 class="font-display text-2xl md:text-3xl text-swole-dark mb-2">Hit the Swap</h3>
+              <p class="text-base md:text-lg font-bold text-swole-ink/80 leading-relaxed">
+                Open
+                <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA" target="_blank" rel="noopener noreferrer" class="text-swole-ginger underline decoration-2 underline-offset-2 hover:text-swole-ochre">pump.fun Swap</a>,
+                connect your wallet, and trade SOL for $SWOLECAT. Copy the CA above if you need to paste the token address.
+              </p>
+            </div>
+          </li>
+
+          <li class="flex flex-col md:flex-row gap-5 md:gap-8 items-start">
+            <span class="font-display text-6xl md:text-7xl step-num leading-none shrink-0 w-20 md:w-24">04</span>
+            <div class="flex-1 pt-1">
+              <h3 class="font-display text-2xl md:text-3xl text-swole-dark mb-2">Confirm &amp; Get Swole</h3>
+              <p class="text-base md:text-lg font-bold text-swole-ink/80 leading-relaxed">
+                Approve the transaction in your wallet. Once it lands on-chain, $SWOLECAT hits your bag.
+                Join Telegram &amp; X, check the chart, and start flexing those unstoppable gains.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="mt-12 md:mt-16 text-center">
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=TBA"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-swole inline-flex items-center justify-center px-10 py-4 bg-swole-gold hover:bg-swole-orange text-swole-dark font-display text-xl rounded-xl border-2 border-swole-dark">
+            Buy $SWOLECAT Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chart / Dexscreener -->
+    <section id="chart" class="bg-swole-dark py-16 md:py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8 md:mb-10">
+          <h2 class="font-display text-4xl md:text-5xl text-swole-gold mb-3">Live Chart</h2>
+          <p class="font-bold text-swole-sand text-lg">Track the gains in real time on Dexscreener.</p>
+        </div>
+        <div class="dex-frame rounded-2xl overflow-hidden aspect-[16/10] md:aspect-[16/9]">
+          <iframe
+            id="dexscreener-embed"
+            title="SWOLECAT Dexscreener Chart"
+            src="https://dexscreener.com/solana/TBA?embed=1&theme=dark&trades=0&info=0"
+            class="w-full h-full min-h-[320px] md:min-h-[480px]"
+            allow="clipboard-write"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="mt-6 text-center">
+          <a href="https://dexscreener.com/solana/TBA"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-swole inline-flex items-center justify-center px-8 py-3.5 bg-swole-cream hover:bg-white text-swole-dark font-display text-base rounded-xl border-2 border-swole-gold">
+            Open Full Chart
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Vibes -->
+    <section class="py-16 md:py-22 px-4 bg-swole-cream">
+      <div class="max-w-4xl mx-auto text-center">
+        <img src="logo.png" alt="SWOLE CAT" class="w-36 h-36 md:w-48 md:h-48 mx-auto object-contain mb-6 animate-flex" />
+        <h2 class="font-display text-3xl md:text-5xl text-swole-dark mb-4">Fearless. Shredded. Legendary.</h2>
+        <p class="text-lg md:text-xl font-bold text-swole-muscle leading-relaxed max-w-2xl mx-auto mb-8">
+          SWOLE CAT flexes unstoppable gains, shredded muscles, fearless vibes, and legendary meme power every day.
+          The only cat on Solana that skips leg day and still dominates the charts.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://t.me/SWOLECAT_sol" target="_blank" rel="noopener noreferrer"
+             class="btn-swole inline-flex items-center gap-2 px-6 py-3 bg-[#24A1DE] hover:bg-[#1a8fc7] text-white font-display text-sm rounded-xl border-2 border-swole-dark">
+            <img src="tg.png" alt="" class="w-7 h-7 rounded-full object-contain" />
+            Telegram
+          </a>
+          <a href="https://x.com/SWOLECAT_sol" target="_blank" rel="noopener noreferrer"
+             class="btn-swole inline-flex items-center gap-2 px-6 py-3 bg-[#0a0a0a] hover:bg-[#222] text-white font-display text-sm rounded-xl border-2 border-swole-dark">
+            <span class="x-icon-wrap w-7 h-7 border border-white/20">
+              <img src="x.png" alt="" class="w-full h-full object-cover" />
+            </span>
+            Follow on X
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 bg-swole-ink text-swole-sand py-10 px-4 border-t-4 border-swole-gold">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="" class="w-12 h-12 object-contain" />
+        <div>
+          <p class="font-display text-lg text-swole-gold">SWOLE CAT</p>
+          <p class="text-xs font-bold tracking-widest text-swole-sand/70">$SWOLECAT · Solana</p>
+        </div>
+      </div>
+      <p class="text-center text-sm font-bold text-swole-sand/60 max-w-md">
+        $SWOLECAT is a meme token for entertainment. DYOR. Not financial advice.
+      </p>
+      <div class="flex items-center gap-3">
+        <a href="https://t.me/SWOLECAT_sol" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform">
+          <img src="tg.png" alt="Telegram" class="w-10 h-10 rounded-full object-contain" />
+        </a>
+        <a href="https://x.com/SWOLECAT_sol" target="_blank" rel="noopener noreferrer" class="x-icon-wrap w-10 h-10 border-2 border-swole-gold hover:scale-110 transition-transform">
+          <img src="x.png" alt="X" class="w-full h-full object-cover" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Copy toast -->
+  <div id="ca-toast" class="ca-toast fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 bg-swole-dark text-swole-gold font-display text-sm rounded-xl border-2 border-swole-gold shadow-lg">
+    CA copied!
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('copy-ca');
+      const ca = document.getElementById('ca-address');
+      const toast = document.getElementById('ca-toast');
+      if (!btn || !ca) return;
+
+      btn.addEventListener('click', async () => {
+        const text = ca.textContent.trim();
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch {
+          const range = document.createRange();
+          range.selectNodeContents(ca);
+          const sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          document.execCommand('copy');
+          sel.removeAllRanges();
+        }
+        toast.classList.add('show');
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          toast.classList.remove('show');
+          btn.textContent = 'Copy CA';
+        }, 1800);
+      });
+    })();
+  </script>
+</body>
+</html>
